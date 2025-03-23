@@ -31,6 +31,8 @@ y = pd.read_csv(os.path.join(os.path.dirname(__file__), '../processed_data/y.csv
 
 
 
+
+
 # inherited_house_df = pd.read_csv('../results_inherited_houses_predictions.csv')
 inherited_house_df = pd.read_csv(os.path.join(os.path.dirname(__file__), '../model_evaluation_results/results_inherited_houses_predictions.csv'))
 
