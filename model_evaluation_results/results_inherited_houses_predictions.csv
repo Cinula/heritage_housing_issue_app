@@ -1,0 +1,5 @@
+1stFlrSF,2ndFlrSF,BedroomAbvGr,BsmtExposure,BsmtFinSF1,BsmtFinType1,BsmtUnfSF,GarageArea,GarageYrBlt,GrLivArea,KitchenQual,LotArea,LotFrontage,MasVnrArea,OpenPorchSF,OverallCond,OverallQual,TotalBsmtSF,YearBuilt,YearRemodAdd,GarageFinish_Fin,GarageFinish_Unf,GarageFinish_RFn,GarageFinish_None,Predicted_SalePrice
+896,0,2,1,468.0,3,270.0,730.0,1961.0,896,3,11622,80.0,0.0,0,6,5,882.0,1961,1961,False,True,False,False,121671.82
+1329,0,3,1,923.0,5,406.0,312.0,1958.0,1329,4,14267,81.0,108.0,36,6,6,1329.0,1958,1958,False,True,False,False,160107.0
+928,701,3,1,791.0,6,137.0,482.0,1997.0,1629,3,13830,74.0,0.0,34,5,5,928.0,1997,1998,True,False,False,False,166636.5
+926,678,3,1,602.0,6,324.0,470.0,1998.0,1604,4,9978,78.0,20.0,36,6,6,926.0,1998,1998,True,False,False,False,190618.0
