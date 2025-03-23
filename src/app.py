@@ -18,6 +18,7 @@ model = pickle.load(open(os.path.join(os.path.dirname(__file__), '../saved_model
 # Replace 'your_dataset.csv' with the actual dataset file
 # data = pd.read_csv('../data/house_prices_records.csv')
 
+
 data = pd.read_csv(os.path.join(os.path.dirname(__file__), '../data/house_prices_records.csv'))
 
 # results_df = pd.read_csv('../model_evaluation_results/model_results.csv')
