@@ -147,7 +147,19 @@ This is the jupyter notebook with detailed comments and explanation about Explor
 - Confidence intervals are not explicitly provided in the current implementation.
 
 ---
- 
+
+## Model Performance Comparison
+
+| Model              | RMSE     | MAE      | MAPE  | Median AE | R²   | Adjusted R² |
+|-------------------|----------|----------|------|------------|------|--------------|
+| Extra Trees      | 25,242.62 | 16,188.45 | 10.08 | 10,035.50  | 0.909 | 0.903        |
+| Gradient Boosting | 27,190.81 | 17,027.44 | 9.96  | 11,005.92  | 0.894 | 0.887        |
+| Random Forest    | 28,044.14 | 17,548.29 | 10.43 | 10,063.50  | 0.888 | 0.880        |
+| XGBoost         | 28,426.55 | 17,106.00 | 9.98  | 9,535.91   | 0.885 | 0.877        |
+| AdaBoost        | 34,061.04 | 23,757.02 | 15.83 | 16,801.89  | 0.834 | 0.823        |
+
+---
+
 ## **Recommendation**
 
 The **Extra Trees Regressor** is the most robust and accurate model for predicting house sale prices in Ames, Iowa. Its ability to minimize errors and explain the variance in sale prices makes it the ideal choice for deployment in the web application. This model will provide Lydia Doe with reliable price predictions for her inherited properties and serve as a valuable decision-making tool for future property evaluations.
