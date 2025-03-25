@@ -1,2 +1,155 @@
-# house_prediction_project
-# -heritage_housing_issue_app
+# Housing Price Prediction
+
+## Objective
+To develop a data web application that accurately predicts house sales prices in Ames, Iowa, with a specific focus on valuing Lydia Doe's four inherited properties. The application leverages historical housing data to identify key value drivers in the local market and provides reliable price estimates to maximize potential sales revenue.
+
+---
+
+## Outcomes
+
+### 1. **Market Analysis**
+- Identify and visualize the key attributes that significantly influence house prices in Ames, Iowa.
+- Provide data-driven insights into the Ames housing market dynamics.
+
+### 2. **Predictive Model**
+- Develop a robust machine learning model trained on historical Ames housing data.
+- Create a user-friendly web interface that allows Lydia to input property attributes and receive price predictions.
+- Enable accurate valuation of the four inherited properties.
+
+### 3. **Decision Support Tool**
+- Provide comparative analysis of the four inherited properties against market benchmarks.
+- Offer a reusable tool for evaluating future property investments in the Ames and Iowa area.
+
+### 4. **Documentation**
+- Deliver clear documentation explaining model methodology and limitations.
+- Include guidance on interpreting results and confidence intervals.
+- Provide instructions for ongoing use of the prediction tool.
+
+This solution empowers Lydia to make informed decisions about her inherited properties while giving her a lasting tool to evaluate future property opportunities in the Ames, Iowa market.
+
+---
+
+## Project Structure
+```
+├── Procfile
+├── README.md
+├── data
+│ ├── house-metadata.txt
+│ ├── house_prices_records.csv
+│ └── inherited_houses.csv
+├── model_building.ipynb
+├── model_evaluation_results
+│   ├── model_results.csv
+│   └── results_inherited_houses_predictions.csv
+├── processed_data
+│   ├── X.csv
+│   └── y.csv
+├── requirements.txt
+├── runtime.txt
+├── saved_model
+│   └── model.pkl
+├── setup.sh
+├── src
+│   └── app.py
+```
+5 directories, 16 files
+
+---
+
+
+## How to Run the Project
+
+### 1. **Local Setup**
+1. Clone the repository:
+```markdown
+git clone https://github.com/Cinula/heritage_housing_issue_app.git
+cd heritage_housing_issue_app
+```
+
+2. Install dependencies:
+```markdown
+pip install -r requirements.txt
+```
+
+3. Run the Streamlit app:
+```markdown
+streamlit run src/app.py
+```
+
+### 2. **Heroku Deployment**
+
+The application is deployed on Heroku. You can access it using the following link: Heroku App Link
+
+[Housing Price Prediction Web App](https://heritage-housing-app-5e4c533af1d1.herokuapp.com/)
+
+---
+## EDA and Model Building Notebook
+
+This is the jupyter notebook with detailed comments and explanation about Exploratory Data Analysis, Feature Engineering, Model Building and Model Evaluation.
+
+[EDA and Model Building Notebook](https://github.com/Cinula/heritage_housing_issue_app/blob/main/model_building.ipynb)
+
+---
+
+## Key Features of the App
+- Users can see the home page with detailed information about each tab.
+- Users can see the Correlation of top features with SalesPrice of housee.
+- Feature Importance: Visualizes the top factors influencing house prices with model evaluaiton results.
+- Lydia can see the  predicted price of her four inherited properties.
+- Input Form: Users can input property attributes to get price predictions
+
+---
+
+# Bugs and Fixes
+
+##### 1. Outliers in the Data
+**Bug:** The dataset contains outliers in several features, such as `GrLivArea`, `LotArea`, and `SalePrice`. These extreme values can distort the model's predictions and reduce accuracy.
+
+**Fix:** Instead of removing outliers (which could lead to loss of valuable information), robust regression algorithms like Random Forest, Extra Trees, and Gradient Boosting were used. These models are less sensitive to outliers and can handle them effectively.
+
+##### 2. Skewed Target Variable
+**Bug:** The target variable, `SalePrice`, is positively skewed (skewness = 1.88), which can affect the performance of models that assume normality.
+
+**Fix:** A log transformation was applied to `SalePrice` during model training to reduce skewness and improve model performance. Predictions were then exponentiated back to the original scale for interpretability.
+
+##### 3. Missing Values
+**Bug:** Several features in the dataset, such as `LotFrontage`, `GarageYrBlt`, and `MasVnrArea`, contain missing values, which can lead to errors during model training.
+
+**Fix:** Missing values were imputed using appropriate strategies:
+- **Numerical Features:** Imputed with the median value.
+- **Categorical Features:** Imputed with the most frequent category or "None" where applicable.
+
+##### 4. Feature Encoding
+**Bug:** Categorical features like `BsmtExposure`, `GarageFinish`, and `KitchenQual` were not in a format suitable for machine learning models.
+
+**Fix:** These features were encoded using ordinal encoding or one-hot encoding, depending on their nature, to make them compatible with the models.
+
+##### 5. Model Compatibility with Deployment
+**Bug:** The `model.pkl` file caused compatibility issues during deployment on Heroku due to differences in the scikit-learn version.
+
+**Fix:** The scikit-learn version used to train the model was explicitly specified in the `requirements.txt` file to ensure compatibility between the local and Heroku environments.
+
+##### 6. Feature Importance Misinterpretation
+**Bug:** Users might misinterpret the feature importance visualization as causal relationships rather than correlations.
+
+**Fix:** Clear documentation was added to explain that feature importance reflects the model's reliance on features for predictions, not causality.
+
+##### 7. Deployment Performance
+**Bug:** The app's performance on Heroku was initially slow due to the size of the dataset and model.
+
+**Fix:** The dataset was preprocessed and saved as smaller files (`X.csv` and `y.csv`), and the trained model was serialized using pickle for faster loading during deployment.
+
+---
+
+## Limitations
+
+- The model's predictions are based on historical data and may not account for future market changes.
+- Confidence intervals are not explicitly provided in the current implementation.
+
+---
+
+## Future Enhancements
+
+- Add confidence intervals for predictions.
+- Integrate additional data sources for improved accuracy.
+- Expand the app to support other housing markets.
