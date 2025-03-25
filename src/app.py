@@ -86,6 +86,7 @@ with tab1:
     st.write("Top 10 features that are most positively correlated with SalePrice:")
     st.write(corr['SalePrice'].sort_values(ascending=False)[1:11]) #top 10 correlations
 
+
 # Tab 2: Model Evaluation Results
 with tab2:    
     st.header("Model Evaluation Results")
