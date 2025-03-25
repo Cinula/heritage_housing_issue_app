@@ -1,26 +1,26 @@
 # Housing Price Prediction
 
-## Objective
+### Objective
 To develop a data web application that accurately predicts house sales prices in Ames, Iowa, with a specific focus on valuing Lydia Doe's four inherited properties. The application leverages historical housing data to identify key value drivers in the local market and provides reliable price estimates to maximize potential sales revenue.
 
 ---
 
-## Outcomes
+### Outcomes
 
-### 1. **Market Analysis**
+#### 1. **Market Analysis**
 - Identify and visualize the key attributes that significantly influence house prices in Ames, Iowa.
 - Provide data-driven insights into the Ames housing market dynamics.
 
-### 2. **Predictive Model**
+#### 2. **Predictive Model**
 - Develop a robust machine learning model trained on historical Ames housing data.
 - Create a user-friendly web interface that allows Lydia to input property attributes and receive price predictions.
 - Enable accurate valuation of the four inherited properties.
 
-### 3. **Decision Support Tool**
+#### 3. **Decision Support Tool**
 - Provide comparative analysis of the four inherited properties against market benchmarks.
 - Offer a reusable tool for evaluating future property investments in the Ames and Iowa area.
 
-### 4. **Documentation**
+#### 4. **Documentation**
 - Deliver clear documentation explaining model methodology and limitations.
 - Include guidance on interpreting results and confidence intervals.
 - Provide instructions for ongoing use of the prediction tool.
