@@ -147,6 +147,14 @@ This is the jupyter notebook with detailed comments and explanation about Explor
 - Confidence intervals are not explicitly provided in the current implementation.
 
 ---
+ 
+## **Recommendation**
+
+The **Extra Trees Regressor** is the most robust and accurate model for predicting house sale prices in Ames, Iowa. Its ability to minimize errors and explain the variance in sale prices makes it the ideal choice for deployment in the web application. This model will provide Lydia Doe with reliable price predictions for her inherited properties and serve as a valuable decision-making tool for future property evaluations.
+
+By leveraging the Extra Trees Regressor, Lydia can confidently assess the value of her properties and make informed decisions to maximize potential sales revenue.
+
+---
 
 ## Future Enhancements
 
