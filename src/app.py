@@ -244,11 +244,21 @@ with tab4:
     input_df = pd.concat([input_df, garage_finish_dummies], axis=1)
     input_df.drop('GarageFinish', axis=1, inplace=True)
 
-    # Ensure all one-hot encoded columns match the training data
-    for col in ['GarageFinish_RFn', 'GarageFinish_Unf', 'GarageFinish_None']:
-        if col not in input_df.columns:
-            input_df[col] = 0  # Add missing columns with default value 0
 
+# None, Rfn, Unf
+    # print(input_df)
+    # Ensure all one-hot encoded columns match the training data
+    for col in ['GarageFinish_None', 'GarageFinish_RFn', 'GarageFinish_Unf']:
+        if col not in input_df.columns:
+            input_df[col] = False  # Add missing columns with default value 0
+
+
+    input_columns = list(input_df.columns)
+    # print(input_columns)
+    final_column_list = ['1stFlrSF', '2ndFlrSF', 'BedroomAbvGr', 'BsmtExposure', 'BsmtFinSF1', 'BsmtFinType1', 'BsmtUnfSF', 'GarageArea', 'GarageYrBlt', 'GrLivArea', 'KitchenQual', 'LotArea', 'LotFrontage', 'MasVnrArea', 'OpenPorchSF', 'OverallCond', 'OverallQual', 'TotalBsmtSF', 'YearBuilt', 'YearRemodAdd', 'GarageFinish_None', 'GarageFinish_RFn', 'GarageFinish_Unf']
+
+    input_df = input_df[final_column_list]
+    # print('before', input_df)
     # Predict the sale price
     prediction = model.predict(input_df)
 
