@@ -166,6 +166,11 @@ with tab3:
     st.write("The table below shows the predicted sale price of inherited houses.")
     st.write(inherited_house_df)
 
+    price_predicted = list(inherited_house_df.Predicted_SalePrice)
+
+    for ind, price in enumerate(price_predicted, start=1):
+        st.write(f'House No {ind} and Predicted Price is {price}')
+
 
 
 # Tab 4: New Ames/IowaHouse Price Prediction

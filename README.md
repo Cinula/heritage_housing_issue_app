@@ -139,6 +139,11 @@ This is the jupyter notebook with detailed comments and explanation about Explor
 
 **Fix:** The dataset was preprocessed and saved as smaller files (`X.csv` and `y.csv`), and the trained model was serialized using pickle for faster loading during deployment.
 
+##### 8. While Using webb App Prediction Tab
+**Bug:** The app will throw an matplotlib.backend_agg.RendererAgg error. This is because the web page can not render the simultaneous selected changes of features for prections.
+
+**Fix:** User has to select the values of selected features one by once to see the predicted house price as with every selection of individual feature it makes a prediction.
+
 ---
 
 ## Limitations
