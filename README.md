@@ -1,5 +1,20 @@
 # Housing Price Prediction
 
+## Project Overview
+
+This project predicts house prices in Ames, Iowa, using Machine Learning. The business case is based on a real-world scenario: a group of heirs inherited several properties and needs accurate price predictions to make informed selling decisions. The goal is to support decision-making with intelligent insights based on historical data.
+
+## Dataset Description
+
+The dataset used is the **Ames Housing Dataset**, obtained from Kaggle: [Kaggle - Ames Housing](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset)
+
+- **Number of rows:** 1,460
+- **Features:** 80 columns (both numeric and categorical)
+- **Missing data:** Some columns have missing values (e.g., GarageYrBlt, LotFrontage)
+- **Target variable:** `SalePrice`
+
+Data cleaning, feature selection, and imputation were done using Scikit-learn pipelines.
+
 ### Objective
 To develop a data web application that accurately predicts house sales prices in Ames, Iowa, with a specific focus on valuing Lydia Doe's four inherited properties. The application leverages historical housing data to identify key value drivers in the local market and provides reliable price estimates to maximize potential sales revenue.
 
