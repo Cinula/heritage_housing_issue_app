@@ -4,7 +4,7 @@
 
 Lydia Doe has inherited four properties in Ames, Iowa and requires accurate valuation to make informed decisions about selling these assets. Without reliable price estimates based on local market conditions, she risks undervaluing her inherited properties, potentially leaving significant money on the table, or overpricing them, resulting in prolonged market exposure and carrying costs.
 
-The solution will accurately predicts fair market values for Lydia's four inherited properties in Ames, Iowa to provide reliable decision support and incorporate local market specifics of Ames and  Iowa.
+The solution will accurately predicts fair market values for Lydia's four inherited properties in Ames, Iowa to provide reliable decision support and incorporate local market specifics of Ames and  Iowa. The application will also predict the house price of any house based in the region based on the Machine Learning (Regression Models) trained.
 
 ---
 
@@ -53,6 +53,7 @@ This solution empowers Lydia to make informed decisions about her inherited prop
 │   ├── X.csv
 │   └── y.csv
 ├── requirements.txt
+├── repo_screenshots
 ├── runtime.txt
 ├── saved_model
 │   └── model.pkl
@@ -99,6 +100,8 @@ Data Quality: The dataset is well-documented and relatively clean, though it con
 - Some variables with skewed distributions
 - A few outliers that may require special handling
 
+
+![Alt text](/repo_screenshots/missing_values.JPG?raw=true "Missing Values Plot")
 
 
 #### Steps Involved for Data Creation for Model Building
