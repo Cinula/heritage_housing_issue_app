@@ -78,6 +78,9 @@ The dataset used is the **Ames Housing Dataset**, obtained from Kaggle: [Kaggle 
 - **Independent Features**: 24 explanatory variables
 - **Format**: CSV files
 
+![Alt text](/repo_screenshots/dataset_head.JPG?raw=true)
+
+
 ### Dataset Details
 
 The dataset contains a rich variety of features categorized as follows:
