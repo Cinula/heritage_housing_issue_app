@@ -122,7 +122,7 @@ In the above charts we are seeing a house Sale price trend over the periods. In 
 
 3. Median House Price
 
-![Alt text](/repo_screenshots/media_house_price.JPG?raw=true)
+![Alt text](/repo_screenshots/median_house_price.JPG?raw=true)
 
 We are seeing the median house Sale price trend over the periods. We can see an increasing trends for the overall period with little fluctuations between 1940 to 1980. There is a suddden increase in average house prices between 1980 as the bank rates of interests sky rocketed during that time hence affecting the mortgage rates for the borrowers.
 
