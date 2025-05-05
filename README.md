@@ -100,13 +100,45 @@ Data Quality: The dataset is well-documented and relatively clean, though it con
 - Some variables with skewed distributions
 - A few outliers that may require special handling
 
-
-![Alt text](/repo_screenshots/missing_values.JPG?raw=true "Missing Values Plot")
-
-
 #### Steps Involved for Data Creation for Model Building
 
 Data Analysis, Data cleaning, feature selection, and imputation for missing values were done using Scikit-learn pipelines.
+
+
+### Data Analysis
+
+1. **Missing Values**
+
+![Alt text](/repo_screenshots/missing_values.JPG?raw=true "Missing Values Plot")
+
+We are checking the missing value in our dataset. As we can see, there are some features that has missing values in them. In order to have a good model to predict results, it is important to impute missing values. We have set the threshold of mssing values to 80%. Any features having more than 80% missing values will be removed from our analysis and model training.
+
+
+2. **Sales Price vs Years Features**
+
+![Alt text](/repo_screenshots/sale_price_vs_Years.JPG?raw=true)
+
+In the above charts we are seeing a house Sale price trend over the periods. In all the three features, the house price is in increasing trend over the years of Garage Built, the year of house built and the year the house is remodelled.
+
+3. Median House Price
+
+![Alt text](/repo_screenshots/media_house_price.JPG?raw=true)
+
+We are seeing the median house Sale price trend over the periods. We can see an increasing trends for the overall period with little fluctuations between 1940 to 1980. There is a suddden increase in average house prices between 1980 as the bank rates of interests sky rocketed during that time hence affecting the mortgage rates for the borrowers.
+
+4. Correlation Analysis
+
+![Alt text](/repo_screenshots/correlation.JPG?raw=true)
+
+Here we see that the OverallQual feature is nearly 80% correlated with the target variable. Overallqual feature refers to the overall material and quality of the materials of the completed house. Well, this make sense as well. People usually consider these parameters for their dream house. In addition, GrLivArea is nearly 70% correlated with the target variable. GrLivArea refers to the living area (in sq ft.) above ground. The following variables show people also care about if the house has a garage, the area of that garage, the size of the basement area, etc.
+
+5. Distribution of Sales Price (Target Variable)
+
+![Alt text](/repo_screenshots/distribution_sale_price.JPG?raw=true)
+
+We can see that the target is continuous, and the distribution is skewed towards the right. The skewness of the SalePrice is 1.88. This indicates that the distribution of house prices is positively skewed (or skewed to the right). The distribution has a longer tail on the right side. Most of the house prices are concentrated on the lower end of the scale, with fewer houses having very high prices. The right tail suggests the presence of outliers or extreme values (houses with very high sale prices). The target variable does not follow a normal distribution, which can affect the performance of certain machine learning models that assume normality (e.g., linear regression).
+
+6. 
 
 ---
 
