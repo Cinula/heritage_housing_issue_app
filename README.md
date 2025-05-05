@@ -216,6 +216,21 @@ This is the jupyter notebook with detailed comments and explanation about Explor
 | XGBoost         | 28,426.55 | 17,106.00 | 9.98  | 9,535.91   | 0.885 | 0.877        |
 | AdaBoost        | 34,061.04 | 23,757.02 | 15.83 | 16,801.89  | 0.834 | 0.823        |
 
+
+![Alt text](/repo_screenshots/feature_importance.JPG?raw=true "Missing Values Plot")
+
+
+Lydia Does four houses prediction results:
+
+| House Number              | Predicted Sales Price     |
+|-------------------|----------|
+| 1      | $121671.82 |
+| 2 | $160107.00 |
+| 3    | $166636.50 |
+| 4         | $190618.00 |
+
+
+
 ---
 
 ## **Recommendation**
