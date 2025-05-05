@@ -217,10 +217,19 @@ This is the jupyter notebook with detailed comments and explanation about Explor
 | AdaBoost        | 34,061.04 | 23,757.02 | 15.83 | 16,801.89  | 0.834 | 0.823        |
 
 
-![Alt text](/repo_screenshots/feature_importance.JPG?raw=true "Missing Values Plot")
+**Feature Importance (Extra Trees)**
+
+![Alt text](/repo_screenshots/feature_importance.JPG?raw=true)
 
 
-Lydia Does four houses prediction results:
+**Actual vs Predicted SalesPrice (Extra Trees)**
+
+![Alt text](/repo_screenshots/extra_tree_actual_predicted.JPG?raw=true)
+
+
+
+
+**Lydia Does four houses prediction results:**
 
 | House Number              | Predicted Sales Price     |
 |-------------------|----------|
