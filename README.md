@@ -121,35 +121,47 @@ We are checking the missing value in our dataset. As we can see, there are some 
 
 In the above charts we are seeing a house Sale price trend over the periods. In all the three features, the house price is in increasing trend over the years of Garage Built, the year of house built and the year the house is remodelled.
 
-3. Median House Price
+3. **Median House Price**
 
 ![Alt text](/repo_screenshots/median_house_price.JPG?raw=true)
 
 We are seeing the median house Sale price trend over the periods. We can see an increasing trends for the overall period with little fluctuations between 1940 to 1980. There is a suddden increase in average house prices between 1980 as the bank rates of interests sky rocketed during that time hence affecting the mortgage rates for the borrowers.
 
-4. Correlation Analysis
+4. **Correlation Analysis**
 
 ![Alt text](/repo_screenshots/correlation.JPG?raw=true)
 
 Here we see that the OverallQual feature is nearly 80% correlated with the target variable. Overallqual feature refers to the overall material and quality of the materials of the completed house. Well, this make sense as well. People usually consider these parameters for their dream house. In addition, GrLivArea is nearly 70% correlated with the target variable. GrLivArea refers to the living area (in sq ft.) above ground. The following variables show people also care about if the house has a garage, the area of that garage, the size of the basement area, etc.
 
-5. Distribution of Sales Price (Target Variable)
+5. **Distribution of Sales Price (Target Variable)**
 
 ![Alt text](/repo_screenshots/distribution_sale_price.JPG?raw=true)
 
 We can see that the target is continuous, and the distribution is skewed towards the right. The skewness of the SalePrice is 1.88. This indicates that the distribution of house prices is positively skewed (or skewed to the right). The distribution has a longer tail on the right side. Most of the house prices are concentrated on the lower end of the scale, with fewer houses having very high prices. The right tail suggests the presence of outliers or extreme values (houses with very high sale prices). The target variable does not follow a normal distribution, which can affect the performance of certain machine learning models that assume normality (e.g., linear regression).
 
-6. Pair Plots
+6. **Pair Plots**
 
 ![Alt text](/repo_screenshots/pair_plots.JPG?raw=true)
 
 The top 5 highly correlated features with Sales price has been plotted above. These are OverallQual, GrLivArea, GarageArea, TotalBsmtSF, 1stFlrSF. We can see that the features are linearly correlated with the target variable in the above scatter pair plots.
 
-7. Box Plots
+7. **Box Plots**
 
 ![Alt text](/repo_screenshots/box_1.JPG?raw=true) ![Alt text](/repo_screenshots/box_2.JPG?raw=true)
 
 The Box plot shows us the outliers (extreme values) in the features. We have seen that in our catrgorical features, there are quite a few outliers. However, we are not removing or treating them. Insteat we will be using Robust machine learning regressors that are not sensitive to outliers and can handle them easily during the training and predictions.
+
+8. **Distribution Plots for Independent Variables**
+
+![Alt text](/repo_screenshots/distribution_1.JPG?raw=true)
+
+We have created similar distribution plots for the other variables that could be found in this [EDA and Model Building Notebook](https://github.com/Cinula/heritage_housing_issue_app/blob/main/model_building.ipynb) notebook here. - The above shows distribution spread of our numerical features. Some of the features are highly positively and negatively skewed. This can be handled in data preprocessing by doing certain transaformations on these columns. Alternatively, ensemble regressors doesn't need to normalise and transform the data. Hence, we will use them in our model training.
+
+9. **Scatter Plots**
+
+![Alt text](/repo_screenshots/scatter.JPG?raw=true)
+
+We have created similar scatter plots for the other variables that could be found in this [EDA and Model Building Notebook](https://github.com/Cinula/heritage_housing_issue_app/blob/main/model_building.ipynb) notebook here. Scatter plots above shows us the relationship of our features with the target variable SalePrice. Some of the features that are linearly correlated to Saleprice could be seen showing us linear trend of data. While the ones that doesn't have strong correlation doesn't show any pattern/trend and the data points are randomly scattered around the axis. 
 
 ---
 
