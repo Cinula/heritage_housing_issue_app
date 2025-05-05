@@ -2,18 +2,11 @@
 
 ## Project Overview
 
-This project predicts house prices in Ames, Iowa, using Machine Learning. The business case is based on a real-world scenario: a group of heirs inherited several properties and needs accurate price predictions to make informed selling decisions. The goal is to support decision-making with intelligent insights based on historical data.
+Lydia Doe has inherited four properties in Ames, Iowa and requires accurate valuation to make informed decisions about selling these assets. Without reliable price estimates based on local market conditions, she risks undervaluing her inherited properties, potentially leaving significant money on the table, or overpricing them, resulting in prolonged market exposure and carrying costs.
 
-## Dataset Description
+The solution will accurately predicts fair market values for Lydia's four inherited properties in Ames, Iowa to provide reliable decision support and incorporate local market specifics of Ames and  Iowa.
 
-The dataset used is the **Ames Housing Dataset**, obtained from Kaggle: [Kaggle - Ames Housing](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset)
-
-- **Number of rows:** 1,460
-- **Features:** 80 columns (both numeric and categorical)
-- **Missing data:** Some columns have missing values (e.g., GarageYrBlt, LotFrontage)
-- **Target variable:** `SalePrice`
-
-Data cleaning, feature selection, and imputation were done using Scikit-learn pipelines.
+---
 
 ### Objective
 To develop a data web application that accurately predicts house sales prices in Ames, Iowa, with a specific focus on valuing Lydia Doe's four inherited properties. The application leverages historical housing data to identify key value drivers in the local market and provides reliable price estimates to maximize potential sales revenue.
@@ -71,6 +64,45 @@ This solution empowers Lydia to make informed decisions about her inherited prop
 
 ---
 
+
+## Dataset Description
+
+The Ames Housing Dataset is a comprehensive real estate dataset compiled for use in data science education. It describes the sale of individual residential properties in Ames, Iowa with 24 explanatory variables covering virtually every aspect of residential homes, this dataset has become a robust alternative to the Boston Housing dataset for advanced regression techniques in machine learning and statistical modeling.
+
+The dataset used is the **Ames Housing Dataset**, obtained from Kaggle: [Kaggle - Ames Housing](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset)
+
+- **Number of rows:** 1,460
+- **Features:** 24 columns (both numeric and categorical)
+- **Missing data:** Some columns have missing values (e.g., GarageYrBlt, LotFrontage)
+- **Target variable:** `SalePrice` (in USD)
+- **Independent Features**: 24 explanatory variables
+- **Format**: CSV files
+
+### Dataset Details
+
+The dataset contains a rich variety of features categorized as follows:
+
+- Location Information
+- House Features
+- Basement Features
+- Garage Information
+- Outdoor Features
+- Sale Information
+
+Data Quality: The dataset is well-documented and relatively clean, though it contains:
+
+- Missing values that require imputation
+- A mix of categorical, ordinal, and numerical variables
+- Some variables with skewed distributions
+- A few outliers that may require special handling
+
+
+
+#### Steps Involved for Data Creation for Model Building
+
+Data Analysis, Data cleaning, feature selection, and imputation for missing values were done using Scikit-learn pipelines.
+
+---
 
 ## How to Run the Project
 
