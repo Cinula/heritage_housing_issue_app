@@ -104,6 +104,7 @@ Data Quality: The dataset is well-documented and relatively clean, though it con
 
 Data Analysis, Data cleaning, feature selection, and imputation for missing values were done using Scikit-learn pipelines.
 
+---
 
 ### Data Analysis
 
@@ -138,7 +139,17 @@ Here we see that the OverallQual feature is nearly 80% correlated with the targe
 
 We can see that the target is continuous, and the distribution is skewed towards the right. The skewness of the SalePrice is 1.88. This indicates that the distribution of house prices is positively skewed (or skewed to the right). The distribution has a longer tail on the right side. Most of the house prices are concentrated on the lower end of the scale, with fewer houses having very high prices. The right tail suggests the presence of outliers or extreme values (houses with very high sale prices). The target variable does not follow a normal distribution, which can affect the performance of certain machine learning models that assume normality (e.g., linear regression).
 
-6. 
+6. Pair Plots
+
+![Alt text](/repo_screenshots/pair_plots.JPG?raw=true)
+
+The top 5 highly correlated features with Sales price has been plotted above. These are OverallQual, GrLivArea, GarageArea, TotalBsmtSF, 1stFlrSF. We can see that the features are linearly correlated with the target variable in the above scatter pair plots.
+
+7. Box Plots
+
+![Alt text](/repo_screenshots/box_1.JPG?raw=true) ![Alt text](/repo_screenshots/box_2.JPG?raw=true)
+
+The Box plot shows us the outliers (extreme values) in the features. We have seen that in our catrgorical features, there are quite a few outliers. However, we are not removing or treating them. Insteat we will be using Robust machine learning regressors that are not sensitive to outliers and can handle them easily during the training and predictions.
 
 ---
 
