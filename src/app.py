@@ -6,6 +6,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import os
 
+import plotly.express as px
+import plotly.graph_objects as go
+
 # Import necessary libraries
 from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor, GradientBoostingRegressor, ExtraTreesRegressor
 from xgboost import XGBRegressor
@@ -74,17 +77,39 @@ with tab_0:
 with tab1:
     st.header("Correlation Heatmap and Distribution of SalePrice")
     st.write("This heatmap shows the correlation between numerical features and the target variable (SalePrice).")
-
-
+    
+    # Get numeric data and calculate correlation
     numeric_data = data.select_dtypes(include=[np.number])
     corr = numeric_data.corr()
-    plt.figure(figsize=(15, 10))
-    sns.heatmap(corr, annot=True, fmt=".2")
-    st.pyplot(plt)
-
+    
+    # Create interactive heatmap with Plotly
+    fig = px.imshow(
+        corr,
+        text_auto=".2f",
+        aspect="auto",
+        color_continuous_scale='RdBu_r',
+        title="Feature Correlation Matrix"
+    )
+    fig.update_layout(height=800, width=800)
+    st.plotly_chart(fig, use_container_width=True)
+    
     st.write("\n")
     st.write("Top 10 features that are most positively correlated with SalePrice:")
-    st.write(corr['SalePrice'].sort_values(ascending=False)[1:11]) #top 10 correlations
+    
+    # Get top correlations
+    top_corr = corr['SalePrice'].sort_values(ascending=False)[1:11]
+    
+    # Create interactive bar chart for top correlations
+    bar_fig = px.bar(
+        x=top_corr.index,
+        y=top_corr.values,
+        title="Top 10 Features Correlated with SalePrice",
+        labels={'x': 'Features', 'y': 'Correlation'},
+        text_auto='.2f'
+    )
+    bar_fig.update_traces(marker_color='indianred')
+    st.plotly_chart(bar_fig, use_container_width=True)
+
 
     st.write("This chart shows the Distribution of target variable (SalePrice).")
 
@@ -93,12 +118,31 @@ with tab1:
 
 
     # Visualize the distribution of the target variable (SalePrice)
-    plt.figure(figsize=(10, 6))
-    sns.histplot(data['SalePrice'], kde=True, bins=30, color='blue')
-    plt.title('Distribution of SalePrice')
-    plt.xlabel('SalePrice')
-    plt.ylabel('Frequency')
-    st.pyplot(plt)
+    fig = px.histogram(
+        data, 
+        x='SalePrice',
+        nbins=50,
+        marginal='box',  # Adds a box plot on the margin
+        color_discrete_sequence=['green'],
+        title='Distribution of SalePrice',
+        labels={'SalePrice': 'SalePrice', 'count': 'Frequency'}
+    )
+
+    
+    fig.update_traces(
+        opacity=0.7,
+        showlegend=False
+    )
+
+    # Add layout improvements
+    fig.update_layout(
+        xaxis_title='SalePrice',
+        yaxis_title='Frequency',
+        hovermode='closest'
+    )
+
+    # Display the interactive plot
+    st.plotly_chart(fig, use_container_width=True)
 
     st.write("This indicates that the distribution of house prices is positively skewed (or skewed to the right.")
 
@@ -135,18 +179,68 @@ with tab2:
 
     y_test = y_test.squeeze()
 
-    plt.figure(figsize=(8, 6))
-    sns.scatterplot(x=y_test, y=y_pred, alpha=0.7, color='blue')
-    plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], color='red', linestyle='--', linewidth=2)
-    plt.title(f'Actual vs. Predicted SalePrice ({best_model["Model"]})')
-    plt.xlabel('Actual SalePrice')
-    plt.ylabel('Predicted SalePrice')
-    plt.grid(True)
-    # plt.show()
-    st.pyplot(plt)
+    # plt.figure(figsize=(8, 6))
+    # sns.scatterplot(x=y_test, y=y_pred, alpha=0.7, color='blue')
+    # plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], color='red', linestyle='--', linewidth=2)
+    # plt.title(f'Actual vs. Predicted SalePrice ({best_model["Model"]})')
+    # plt.xlabel('Actual SalePrice')
+    # plt.ylabel('Predicted SalePrice')
+    # plt.grid(True)
+    # # plt.show()
+    # st.pyplot(plt)
 
 
-    # Extract feature importances
+    comparison_df = pd.DataFrame({
+        'Actual': y_test,
+        'Predicted': y_pred
+    })
+
+    
+    fig = px.scatter(
+        comparison_df, 
+        x='Actual',
+        y='Predicted',
+        opacity=0.7,
+        title=f'Actual vs. Predicted SalePrice ({best_model["Model"]})',
+        labels={'Actual': 'Actual SalePrice', 'Predicted': 'Predicted SalePrice'},
+        color_discrete_sequence=['blue']
+    )
+
+    
+    x_range = [min(y_test.min(), y_pred.min()), max(y_test.max(), y_pred.max())]
+    fig.add_trace(
+        go.Scatter(
+            x=x_range,
+            y=x_range,
+            mode='lines',
+            name='Perfect Prediction',
+            line=dict(color='red', dash='dash', width=2)
+        )
+    )
+
+    
+    fig.update_layout(
+        xaxis_title='Actual SalePrice',
+        yaxis_title='Predicted SalePrice',
+        hovermode='closest',
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
+    )
+
+    
+    fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+
+    
+    st.plotly_chart(fig, use_container_width=True)
+
+
+    
     feature_importances = model.feature_importances_
 
     # Create a DataFrame for feature importances
@@ -158,14 +252,36 @@ with tab2:
     # Sort features by importance
     feature_importance_df = feature_importance_df.sort_values(by='Importance', ascending=False)
 
-    # Plot the top 10 most important features
-    plt.figure(figsize=(15, 10))
-    plt.barh(feature_importance_df['Feature'][:][::-1], feature_importance_df['Importance'][:][::-1], color='skyblue')
-    plt.xlabel('Feature Importance')
-    plt.ylabel('Feature')
-    plt.title('Top 10 Most Important Features (Extra Trees)')
-    # plt.show()
-    st.pyplot(plt)
+    
+    fig = px.bar(
+        feature_importance_df,
+        y='Feature',
+        x='Importance',
+        orientation='h',
+        title='Feature Importance (Extra Trees)',
+        color='Importance',
+        color_continuous_scale='blues',
+        labels={'Importance': 'Feature Importance', 'Feature': 'Feature Name'},
+        height=600
+    )
+
+    
+    fig.update_layout(
+        yaxis={'categoryorder': 'total ascending'},  # Sort bars by value
+        xaxis_title='Feature Importance',
+        yaxis_title='Feature',
+        hovermode='closest',
+        coloraxis_showscale=True,
+        coloraxis_colorbar=dict(title='Importance')
+    )
+
+    
+    fig.update_traces(
+        hovertemplate='<b>%{y}</b><br>Importance: %{x:.4f}<extra></extra>'
+    )
+
+    
+    st.plotly_chart(fig, use_container_width=True)
 
     
 
