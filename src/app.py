@@ -42,7 +42,7 @@ st.title("Heritage Housing Issue")
 st.write("This intelligent system predicts the sale price of a house and provides insights into feature correlations.")
 
 # Create tabs
-tab_0, tab1, tab2, tab3, tab4 = st.tabs(["Home Page", "Correlation Heatmap and Model Evaluation Results", "Model Evaluation Results", "Inherited Houses Price Prediction", "New Ames/IowaHouse Price Prediction"])
+tab_0, tab1, tab2, tab3, tab4 = st.tabs(["Home Page", "Correlation Heatmap and Distribution of SalePrice", "Model Evaluation Results", "Inherited Houses Price Prediction", "New Ames/IowaHouse Price Prediction"])
 
 
 # Tab 0: Home Page
@@ -70,9 +70,9 @@ with tab_0:
     
 
 
-# Tab 1: Correlation Heatmap
+# Tab 1: Correlation Heatmap and Distribution of SalePrice
 with tab1:
-    st.header("Correlation Heatmap")
+    st.header("Correlation Heatmap and Distribution of SalePrice")
     st.write("This heatmap shows the correlation between numerical features and the target variable (SalePrice).")
 
 
@@ -86,6 +86,27 @@ with tab1:
     st.write("Top 10 features that are most positively correlated with SalePrice:")
     st.write(corr['SalePrice'].sort_values(ascending=False)[1:11]) #top 10 correlations
 
+    st.write("This chart shows the Distribution of target variable (SalePrice).")
+
+
+    st.write("We can see that the target is continuous, and the distribution is skewed towards the right. The skewness of the SalePrice is 1.88.")
+
+
+    # Visualize the distribution of the target variable (SalePrice)
+    plt.figure(figsize=(10, 6))
+    sns.histplot(data['SalePrice'], kde=True, bins=30, color='blue')
+    plt.title('Distribution of SalePrice')
+    plt.xlabel('SalePrice')
+    plt.ylabel('Frequency')
+    st.pyplot(plt)
+
+    st.write("This indicates that the distribution of house prices is positively skewed (or skewed to the right.")
+
+    st.write("The distribution has a longer tail on the right side. Most of the house prices are concentrated on the lower end of the scale, with fewer houses having very high prices.")
+
+    st.write("Outliers: The right tail suggests the presence of outliers or extreme values (houses with very high sale prices).")
+
+    st.write("Non-Normal Distribution: The target variable does not follow a normal distribution, which can affect the performance of certain machine learning models that assume normality (e.g., linear regression.")
 
 # Tab 2: Model Evaluation Results
 with tab2:    
@@ -169,7 +190,7 @@ with tab3:
     price_predicted = list(inherited_house_df.Predicted_SalePrice)
 
     for ind, price in enumerate(price_predicted, start=1):
-        st.write(f'House No {ind} and Predicted Price is {price}')
+        st.write(f'House No {ind} and Predicted Price is ${price}')
 
 
 
