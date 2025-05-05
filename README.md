@@ -106,7 +106,7 @@ Data Analysis, Data cleaning, feature selection, and imputation for missing valu
 
 ---
 
-### Data Analysis
+## Data Analysis
 
 1. **Missing Values**
 
