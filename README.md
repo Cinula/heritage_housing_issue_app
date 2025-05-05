@@ -70,7 +70,7 @@ This solution empowers Lydia to make informed decisions about her inherited prop
 
 The Ames Housing Dataset is a comprehensive real estate dataset compiled for use in data science education. It describes the sale of individual residential properties in Ames, Iowa with 24 explanatory variables covering virtually every aspect of residential homes, this dataset has become a robust alternative to the Boston Housing dataset for advanced regression techniques in machine learning and statistical modeling.
 
-The dataset used is the **Ames Housing Dataset**, obtained from Kaggle: [Kaggle - Ames Housing](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset)
+The dataset used is the **Ames Housing Dataset**, obtained from Kaggle: [Kaggle - Ames Housing](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data)
 
 - **Number of rows:** 1,460
 - **Features:** 24 columns (both numeric and categorical)
