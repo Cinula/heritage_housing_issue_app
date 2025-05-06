@@ -197,6 +197,32 @@ This is the jupyter notebook with detailed comments and explanation about Explor
 
 [EDA and Model Building Notebook](https://github.com/Cinula/heritage_housing_issue_app/blob/main/model_building.ipynb)
 
+
+---
+
+## Hypothesis Testing
+
+There could be many hypothesis created around this project. I have decided to consider LotArea and Sales price as an example to support by business objective with the one of the below mentioned hypothesis.
+
+- Null Hypothesis (H0): LotArea do not significantly affect the sale price.
+- Alternate Hypothesis (H1): LotArea significantly affect the sale price.
+
+![Alt text](/repo_screenshots/hypothesis.JPG?raw=true)
+
+#### Explanation:
+
+**p-value=1.1231391549185238e-24**
+
+1. P-value: The p-value for LotArea is extremely small (p < 0.001), indicating strong statistical significance.
+
+2. Coefficient: For each additional square foot of lot area, the sale price increases by approximately $2.10.
+
+3. R-squared: The model explains about 7% (R² = 0.070) of the variation in sale prices, suggesting that while lot area is a significant predictor, other factors not included in this model also strongly influence home prices.
+
+4. F-statistic: The high F-statistic (109.1) with a very low probability (1.12e-24) further confirms the statistical significance of the relationship.
+
+While the relationship is statistically significant, the relatively low R-squared value suggests that lot area alone is not sufficient to comprehensively predict home sale prices, and a more complete model would likely include additional variables. Since p-value is extremely small, we reject the null hypothesis and conclude that independent variable LotArea has statistically significant impact on the dependent variable SalePrice.
+
 ---
 
 ## Key Features of the App
