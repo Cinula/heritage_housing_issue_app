@@ -85,7 +85,7 @@ Below are the detailed business requirements categorized into Data Visualization
 | ML_1 | Price Prediction Model | As a homebuyer, I want an accurate prediction of a house's value based on its features, so that I can determine if it's fairly priced. |
 | ML_2 | Feature Importance Analysis | As a property seller, I want to know which features most affect my home's value, so that I can focus on improving these aspects before selling. |
 | ML_4 | Model Building | As a data scientist, I want to train and build different Machine Learning Model to predict the Sale price of a house. |
-| ML_3 | Model Comparison | As a data scientist, I want to compare different regression models, so that I can identify the most accurate approach for house price prediction. |
+| ML_3 | Model Comparison and Evaluation | As a data scientist, I want to compare different regression models, so that I can identify the most accurate approach for house price prediction. |
 
 ### 3. Implementation Plan
 
