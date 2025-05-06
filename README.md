@@ -65,6 +65,58 @@ This solution empowers Lydia to make informed decisions about her inherited prop
 
 ---
 
+## Business Requirements
+
+Below are the detailed business requirements categorized into Data Visualization and Machine Learning tasks.
+
+### 1. Data Visualization Requirements
+
+| ID | Description | User Story |
+|----|-------------|------------|
+| DV_1 | Correlation Analysis | visualize the correlation between different house features and price, so that I can understand which factors most influence property values. |
+| DV_2 | Price Trends Over Time | As an investor, I want to visualize how house prices have changed over time, so that I can make informed decisions about market trends. |
+| DV_3 | Feature Importance Visualization | As a property developer, I want to see which house features add the most value, so that I can focus on these aspects in new developments. |
+| DV_4 | Price Range Distribution | As a real estate agent, I want to visualize the distribution of houses across price ranges, so that I can better advise clients on competitive pricing. |
+
+### 2. Machine Learning Requirements
+
+| ID | Description | User Story |
+|----|-------------|------------|
+| ML_1 | Price Prediction Model | As a homebuyer, I want an accurate prediction of a house's value based on its features, so that I can determine if it's fairly priced. |
+| ML_2 | Feature Importance Analysis | As a property seller, I want to know which features most affect my home's value, so that I can focus on improving these aspects before selling. |
+| ML_3 | Model Comparison | As a data scientist, I want to compare different regression models, so that I can identify the most accurate approach for house price prediction. |
+| ML_4 | Prediction Reliability Score | As an investor, I want to know the confidence level of price predictions, so that I can assess the risk of my investment decisions. |
+
+### 3. Implementation Plan
+
+Each requirement will be addressed through the following approaches:
+
+**Data Visualization:**
+- Interactive dashboards using Matplotlib, Seaborn, and Plotly
+- Time series analysis with trend visualization
+- Correlation heatmaps and feature importance charts
+
+**Machine Learning:**
+- Implementation of multiple regression models (Linear Regression, Random Forest, XGBoost etc.)
+- Hyperparameter tuning for optimization
+- Feature engineering based on correlation analysis
+- Model evaluation using RMSE, MAE, and R² metrics
+
+**Streamlit web app**
+- Interactive streamlit web app to show results and charts.
+- Tool to predict sale price for a new house based on inputs by user.
+- Depoyment of streamlit web app on Heroku.
+
+### 4. Success Criteria
+
+1. Model achieves prediction accuracy with low RMSE and high R².
+2. Clear visualization of at least 5 key factors influencing house prices
+3. Interactive features allowing users to input house characteristics and receive price estimates
+4. Comprehensive documentation of model limitations and reliability across different market segments
+
+---
+
+
 
 ## Dataset Description
 
